@@ -60,7 +60,7 @@ var MonthsView = function (_Component) {
         classes = 'rdtMonth';
         currentMonth = _this.props.viewDate.clone().set({ year: year, month: i, date: irrelevantDate });
 
-        noOfDaysInMonth = currentMonth.endOf('month').format('D');
+        noOfDaysInMonth = currentMonth.endOf('month').locale('en').format('D');
         daysInMonth = Array.from({ length: noOfDaysInMonth }, function (e, i) {
           return i + 1;
         });

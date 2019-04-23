@@ -61,7 +61,7 @@ var YearsView = function (_Component) {
         // if ( i === -1 | i === 10 )
         // classes += ' rdtOld';
 
-        noOfDaysInYear = currentYear.endOf('year').format('DDD');
+        noOfDaysInYear = currentYear.endOf('year').locale('en').format('DDD');
         daysInYear = Array.from({ length: noOfDaysInYear }, function (e, i) {
           return i + 1;
         });
