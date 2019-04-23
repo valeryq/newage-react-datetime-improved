@@ -18,9 +18,9 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _moment = require('moment');
+var _moment2 = require('moment');
 
-var _moment2 = _interopRequireDefault(_moment);
+var _moment3 = _interopRequireDefault(_moment2);
 
 var _objectAssign = require('object-assign');
 
@@ -125,7 +125,7 @@ var DateTime = function (_Component) {
       }
 
       if (nextProps.viewDate !== this.props.viewDate) {
-        updatedState.viewDate = (0, _moment2.default)(nextProps.viewDate);
+        updatedState.viewDate = (0, _moment3.default)(nextProps.viewDate);
       }
 
       this.setState(updatedState);
@@ -218,7 +218,8 @@ DateTime.propTypes = {
   onNavigateBack: _propTypes2.default.func,
   onNavigateForward: _propTypes2.default.func,
   enableOnClickOutside: _propTypes2.default.func,
-  disableOnClickOutside: _propTypes2.default.func
+  disableOnClickOutside: _propTypes2.default.func,
+  moment: _propTypes2.default.func
 };
 DateTime.defaultProps = {
   className: '',
@@ -242,7 +243,8 @@ DateTime.defaultProps = {
   withTime: false,
   enableOnClickOutside: null,
   disableOnClickOutside: null,
-  onClickOutsideDisabled: false
+  onClickOutsideDisabled: false,
+  moment: null
 };
 
 var _initialiseProps = function _initialiseProps() {
@@ -294,7 +296,8 @@ var _initialiseProps = function _initialiseProps() {
 
   this.localMoment = function (date, format, props) {
     props = props || _this2.props;
-    var momentFn = props.utc ? _moment2.default.utc : _moment2.default;
+    var _moment = props.moment || _moment3.default;
+    var momentFn = props.utc ? _moment.utc : _moment;
     var m = momentFn(date, format, props.strictParsing);
     if (props.locale) {
       m.locale(props.locale);

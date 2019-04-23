@@ -1,5 +1,5 @@
 {
-  "name": "newage-react-datetime",
+  "name": "newage-react-datetime-improved",
   "version": "1.0.9",
   "description": "react-datetime",
   "main": "dist/DateTime.js",
@@ -16,6 +16,7 @@
   "author": "NAS",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "6.26.3",
     "babel-eslint": "8.2.3",
     "babel-loader": "7.1.4",

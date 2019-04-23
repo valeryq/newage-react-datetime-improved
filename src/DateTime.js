@@ -38,6 +38,7 @@ class DateTime extends Component {
     onNavigateForward: PropTypes.func,
     enableOnClickOutside: PropTypes.func,
     disableOnClickOutside: PropTypes.func,
+    moment: PropTypes.func,
   };
 
   static defaultProps = {
@@ -69,6 +70,7 @@ class DateTime extends Component {
     enableOnClickOutside: null,
     disableOnClickOutside: null,
     onClickOutsideDisabled: false,
+    moment: null,
   };
 
   constructor(props) {
@@ -135,7 +137,8 @@ class DateTime extends Component {
 
   localMoment = (date, format, props) => {
     props = props || this.props;
-    const momentFn = props.utc ? moment.utc : moment;
+    const _moment = props.moment || moment;
+    const momentFn = props.utc ? _moment.utc : _moment;
     let m = momentFn(date, format, props.strictParsing);
     if (props.locale) {
       m.locale(props.locale);
