@@ -1,6 +1,6 @@
 {
   "name": "newage-react-datetime-improved",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "react-datetime",
   "main": "dist/DateTime.js",
   "scripts": {
@@ -39,8 +39,8 @@
     "moment": "2.22.1",
     "object-assign": "4.1.1",
     "prop-types": "^15.6.0",
-    "react": "16.3.2",
-    "react-dom": "16.3.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-onclickoutside": "^6.8.0"
   }
 }
